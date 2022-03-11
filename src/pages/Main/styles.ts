@@ -12,10 +12,6 @@ export const StMainLink = styled(Link)`
   width: calc(100% - 40px);
 `;
 
-export const StDownloadButton = styled.button`
-  ${COMMON_STYLES.BUTTON_PINK}
-`;
-
 export const StMainText = styled.div`
   font-size: 16px;
   line-height: 20.03px;
@@ -36,19 +32,4 @@ export const StLinkWrapper = styled.div`
   margin-top: 49px;
   margin-bottom: 45px;
   gap: 20px;
-`;
-
-export const StPlatformButton = styled.div`
-  ${COMMON_STYLES.BUTTON_PINK};
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 0;
-  padding-right: 0;
-`;
-
-export const StPlatformWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: calc(100% - 40px);
-  gap: 10px;
 `;
