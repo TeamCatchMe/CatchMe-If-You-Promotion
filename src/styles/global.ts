@@ -7,7 +7,10 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         background-color: #1c1c1c;
         display: flex;
-        justify-content: center
+        justify-content: center;
+        @media (min-height: 850px) {
+            align-items:center;
+        }
     }
     * {
         color: white;
