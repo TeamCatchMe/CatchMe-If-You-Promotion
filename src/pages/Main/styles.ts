@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { COLORS } from '../../styles/color';
 import { COMMON_STYLES } from '../../styles/common';
 
 export const StMainWrapper = styled.div`
@@ -10,6 +11,12 @@ export const StMainWrapper = styled.div`
 export const StMainLink = styled(Link)`
   ${COMMON_STYLES.BUTTON_GRAY};
   width: calc(100% - 40px);
+`;
+
+export const StMainAnchor = styled.a<{ disabled?: boolean }>`
+  ${COMMON_STYLES.BUTTON_GRAY};
+  width: calc(100% - 40px);
+  ${({ disabled }) => disabled && `color:${COLORS.GRAY_050}`}
 `;
 
 export const StMainText = styled.div`

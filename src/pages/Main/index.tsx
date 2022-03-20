@@ -19,7 +19,7 @@ function MainPage() {
       <ImageMain />
       <StLinkWrapper>
         <StMainLink to='/about'>캐치미를 알아보자!</StMainLink>
-        <StMainLink to='/game'>캐치미 게임 월드(가제)</StMainLink>
+        <StMainLink to='/game'>캐치미 게임 월드</StMainLink>
       </StLinkWrapper>
       <AppDownloadButton />
     </StMainWrapper>
