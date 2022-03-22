@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { IcBtnBack } from '../../../assets';
+import ProgressBar from '../../../components/ProgressBar';
 import { catchuTestItems } from '../../../data/catchutest';
+import { StAnswer, StQuestion } from '../style';
 
 function CatchuTestStart() {
   const { questionID } = useParams();
   const navigate = useNavigate();
   const [question, setQuestion] = useState<CatchuTestItem | null>(null);
-  console.log(questionID);
+
   useEffect(() => {
     if (questionID === undefined || isNaN(+questionID))
       return navigate('/test');
@@ -24,23 +27,43 @@ function CatchuTestStart() {
     if (!question || !questionID) return;
     localStorage.setItem(question.index, answer);
     if (+questionID === 12) {
-      console.log('hi');
       return navigate('/test/result');
     } else {
-      console.log('hello');
       return navigate(`/test/${+questionID + 1}`);
     }
   };
 
   return (
-    <div>
-      {question && (
-        <>
-          <div>{question.question}</div>
-          <div onClick={() => saveAnswer('A')}>{question.answer.a}</div>
-          <div onClick={() => saveAnswer('B')}>{question.answer.b}</div>
-        </>
-      )}
+    <div style={{ minHeight: '100vh' }}>
+      <div style={{ height: 48 }}>
+        {questionID !== '1' && <IcBtnBack onClick={() => navigate(-1)} />}
+      </div>
+      <div style={{ height: 48 }}></div>
+      <div
+        style={{
+          paddingLeft: 20,
+          paddingRight: 20,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        {questionID && <ProgressBar total={12} current={+questionID} />}
+        <div style={{ height: 96 }}></div>
+        {question && (
+          <>
+            <question.Catchu />
+            <div style={{ height: 18 }} />
+            <StQuestion>{question.question}</StQuestion>
+            <StAnswer onClick={() => saveAnswer('A')}>
+              <div>{question.answer.a}</div>
+            </StAnswer>
+            <StAnswer onClick={() => saveAnswer('B')}>
+              <div>{question.answer.b}</div>
+            </StAnswer>
+          </>
+        )}
+      </div>
     </div>
   );
 }

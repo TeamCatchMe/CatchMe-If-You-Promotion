@@ -3,6 +3,10 @@ import reset from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
     ${reset};
+    @font-face {
+        font-family: "BMJUA";
+        src: url("../assets/font/BMJUA_otf.otf");
+    }
     body {
         min-height: 100vh;
         background-color: #1c1c1c;
