@@ -48,6 +48,9 @@ function CatchuTestStart() {
           alignItems: 'center',
         }}
       >
+        <div style={{ alignSelf: 'flex-end', marginBottom: 17 }}>
+          <span>{questionID}</span>/12
+        </div>
         {questionID && <ProgressBar total={12} current={+questionID} />}
         <div style={{ height: 96 }}></div>
         {question && (
