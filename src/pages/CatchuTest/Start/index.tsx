@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router';
 import { IcBtnBack } from '../../../assets';
 import ProgressBar from '../../../components/ProgressBar';
 import { catchuTestItems } from '../../../data/catchutest';
+import { COLORS } from '../../../styles/color';
 import { StAnswer, StQuestion } from '../style';
 
 function CatchuTestStart() {
@@ -49,7 +50,7 @@ function CatchuTestStart() {
         }}
       >
         <div style={{ alignSelf: 'flex-end', marginBottom: 17 }}>
-          <span>{questionID}</span>/12
+          <span style={{ color: COLORS.PINK_210 }}>{questionID}</span>/12
         </div>
         {questionID && <ProgressBar total={12} current={+questionID} />}
         <div style={{ height: 96 }}></div>
