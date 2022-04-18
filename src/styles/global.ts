@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     ${reset};
     @font-face {
         font-family: "BMJUA";
-        src: url("../assets/font/BMJUA_otf.otf");
+        src: url("/font/BMJUA_otf.otf");
     }
     body {
         min-height: 100vh;
