@@ -37,7 +37,12 @@ function CatchuTestStart() {
   return (
     <div style={{ minHeight: '100vh' }}>
       <div style={{ height: 48 }}>
-        {questionID !== '1' && <IcBtnBack onClick={() => navigate(-1)} />}
+        {questionID !== '1' && (
+          <IcBtnBack
+            onClick={() => navigate(-1)}
+            style={{ cursor: 'pointer' }}
+          />
+        )}
       </div>
       <div style={{ height: 48 }}></div>
       <div
