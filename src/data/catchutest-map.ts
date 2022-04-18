@@ -32,16 +32,48 @@ export const questionToType: {
   '12': '우호성',
 };
 
-enum TextType {
+export enum TextType {
   special = 'special',
   normal = 'normal',
 }
 
-export const answerToCatchu = {
+enum CatchuDataKey {
+  AAAA = 'AAAA',
+  AAAB = 'AAAB',
+  AABA = 'AABA',
+  AABB = 'AABB',
+  ABAA = 'ABAA',
+  ABBA = 'ABBA',
+  ABAB = 'ABAB',
+  ABBB = 'ABBB',
+  BAAA = 'BAAA',
+  BAAB = 'BAAB',
+  BABA = 'BABA',
+  BABB = 'BABB',
+  BBAA = 'BBAA',
+  BBBA = 'BBBA',
+  BBAB = 'BBAB',
+  BBBB = 'BBBB',
+}
+
+export type CatchuDataType = {
+  name: string;
+  catchuText: string;
+  reverse: CatchuDataKey;
+  shortDescription: { content: string; type: TextType }[];
+  longDescription: { content: string; type: TextType }[];
+  characteristics: string[];
+};
+
+type AnswerToCatchuType = {
+  [key in CatchuDataKey]: CatchuDataType;
+};
+
+export const answerToCatchu: AnswerToCatchuType = {
   AAAA: {
     name: '찰칵- 멋진 곳만 골라 출사 다니는 포토그래퍼',
     catchuText: AAAATxt,
-    reverse: 'BBBB',
+    reverse: CatchuDataKey.BBBB,
     shortDescription: [
       { content: '밝은 에너지', type: TextType.special },
       { content: '와 당신만의 매력이 강점인 당신!', type: TextType.normal },
@@ -79,7 +111,7 @@ export const answerToCatchu = {
   AAAB: {
     name: '크루들과 함께 도심 속 달리기, 시티 러너',
     catchuText: AAABTxt,
-    reverse: 'BBBA',
+    reverse: CatchuDataKey.BBBA,
     shortDescription: [
       { content: '운동 하나를 하더라도\n', type: TextType.normal },
       { content: '재미없고 평범한 건 싫은', type: TextType.special },
@@ -114,7 +146,7 @@ export const answerToCatchu = {
   AABA: {
     name: '한 걸음 한 걸음, 나를 찾는 길을 걷는 트래킹족',
     catchuText: AABATxt,
-    reverse: 'BBAB',
+    reverse: CatchuDataKey.BBAB,
     shortDescription: [
       { content: '재미있는 게 너무 많아', type: TextType.special },
       { content: '\n부지런할 수밖에 없는 당신', type: TextType.normal },
@@ -154,7 +186,7 @@ export const answerToCatchu = {
   AABB: {
     name: '오르지 못한 절벽은 없어! 마운틴 클라이머',
     catchuText: AABBTxt,
-    reverse: 'BBAA',
+    reverse: CatchuDataKey.BBAA,
     shortDescription: [
       { content: '높이 솟은 암벽일지라도 ', type: TextType.normal },
       { content: '나의 길을 개척할', type: TextType.special },
@@ -185,7 +217,7 @@ export const answerToCatchu = {
   ABAA: {
     name: '내 안의 아이돌을 꺼내봐! 둠칫둠칫 댄서',
     catchuText: ABAATxt,
-    reverse: 'BABB',
+    reverse: CatchuDataKey.BABB,
     shortDescription: [
       { content: '넘치는 열정과 에너지', type: TextType.special },
       { content: '를 가진 당신', type: TextType.normal },
@@ -224,7 +256,7 @@ export const answerToCatchu = {
   ABAB: {
     name: '차곡차곡 도장깨기를 해볼까? 스트리트 푸드 파이터!',
     catchuText: ABABTxt,
-    reverse: 'BABA',
+    reverse: CatchuDataKey.BABA,
     shortDescription: [
       { content: '특유의 세심함', type: TextType.special },
       { content: '이 뛰어난 당신', type: TextType.normal },
@@ -264,7 +296,7 @@ export const answerToCatchu = {
   ABBA: {
     name: '혼자 봤던 풍경들이 고스란히 남기를, 여행 브이로거',
     catchuText: ABBATxt,
-    reverse: 'BAAB',
+    reverse: CatchuDataKey.BAAB,
     shortDescription: [
       { content: '자연 속에서', type: TextType.special },
       { content: ' 에너지를 얻는 당신', type: TextType.normal },
@@ -302,7 +334,7 @@ export const answerToCatchu = {
   ABBB: {
     name: '무럭무럭 키워서 맛있게 먹어버리겠다! 텃밭 가꾸는 농부',
     catchuText: ABBBTxt,
-    reverse: 'BAAA',
+    reverse: CatchuDataKey.BAAA,
     shortDescription: [
       { content: '특유의 세심함', type: TextType.special },
       { content: '이 뛰어난 당신', type: TextType.normal },
@@ -342,7 +374,7 @@ export const answerToCatchu = {
   BAAA: {
     name: '빠른 두뇌회전으로 체스를 두는 퀸즈갬빗, 아니 캐츄갬빗?',
     catchuText: BAAATxt,
-    reverse: 'ABBB',
+    reverse: CatchuDataKey.ABBB,
     shortDescription: [
       { content: '충분한 고민', type: TextType.special },
       { content: '을 거친 뒤 실행하는 당신', type: TextType.normal },
@@ -382,7 +414,7 @@ export const answerToCatchu = {
   BAAB: {
     name: '싸늘하다... 가슴에 비수가 날ㅇ...! 보드 게임을 지배하는 게이머',
     catchuText: BAABTxt,
-    reverse: 'ABBA',
+    reverse: CatchuDataKey.ABBA,
     shortDescription: [
       { content: '손은 눈보다 빠르니까!', type: TextType.special },
     ],
@@ -421,7 +453,7 @@ export const answerToCatchu = {
   BABA: {
     name: '정성 한 그릇을 손 끝으로 빚어내는 도예가',
     catchuText: BABATxt,
-    reverse: 'ABAB',
+    reverse: CatchuDataKey.ABAB,
     shortDescription: [
       { content: '특유의 정서와 단단한 마음', type: TextType.special },
       { content: '을 가진 당신', type: TextType.normal },
@@ -452,7 +484,7 @@ export const answerToCatchu = {
   BABB: {
     name: '맛있는 건 정말 참을 수 없어~ 집밥 캐선생',
     catchuText: BABBTxt,
-    reverse: 'ABAA',
+    reverse: CatchuDataKey.ABAA,
     shortDescription: [
       { content: '소소한 행복과 안정감', type: TextType.special },
       { content: '이 중요한 당신', type: TextType.normal },
@@ -483,7 +515,7 @@ export const answerToCatchu = {
   BBAA: {
     name: '브레인스토밍과 썰전은 참을 수 없지, 독서 모임 우수 회원',
     catchuText: BBAATxt,
-    reverse: 'AABB',
+    reverse: CatchuDataKey.AABB,
     shortDescription: [
       { content: '의견을 전개하는데', type: TextType.special },
       { content: ' 거리낌이 없는 당신', type: TextType.normal },
@@ -521,7 +553,7 @@ export const answerToCatchu = {
   BBAB: {
     name: '교양 충전, 환상의 하모니를 연주하는 오케스트라 단원',
     catchuText: BBABTxt,
-    reverse: 'AABA',
+    reverse: CatchuDataKey.AABA,
     shortDescription: [
       { content: '아름다운 선율', type: TextType.special },
       { content: '을 즐기는 당신', type: TextType.normal },
@@ -560,7 +592,7 @@ export const answerToCatchu = {
   BBBA: {
     name: '나만의 세계를 써내려가는 작가, 조앤 캐츄 롤링?',
     catchuText: BBBATxt,
-    reverse: 'AAAB',
+    reverse: CatchuDataKey.AAAB,
     shortDescription: [
       { content: '조용하지만 ', type: TextType.normal },
       { content: '창의적인', type: TextType.special },
@@ -592,7 +624,7 @@ export const answerToCatchu = {
   BBBB: {
     name: '한 땀마다 따숩게, 겨울을 기다리는 뜨개질 마스터',
     catchuText: BBBBTxt,
-    reverse: 'AAAA',
+    reverse: CatchuDataKey.AAAA,
     shortDescription: [
       { content: '어른스럽고 침착한', type: TextType.special },
       { content: ' 당신', type: TextType.normal },
