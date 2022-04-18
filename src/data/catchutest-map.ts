@@ -35,6 +35,7 @@ export const questionToType: {
 export enum TextType {
   special = 'special',
   normal = 'normal',
+  ultra = 'ultra',
 }
 
 enum CatchuDataKey {
@@ -162,8 +163,7 @@ export const answerToCatchu: AnswerToCatchuType = {
         type: TextType.special,
       },
       {
-        content:
-          '이 주변 사람들에게 매력으로 다가가지만,  의외의 시크함이 있네요. 장기적인 목표보단 하루하루에 충실한 당신의 걸음을 캐치미에 기록해보는 건 어떨까요? ',
+        content: '이 주변 사람들에게 매력으로 다가가지만, ',
         type: TextType.normal,
       },
       {
