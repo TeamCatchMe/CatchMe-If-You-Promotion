@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import {
   questionToType,
   answerToCatchu,
@@ -26,6 +27,7 @@ type TestResultType = CatchuDataType & {
 
 function CatchuTestResult() {
   const [result, setResult] = useState<null | TestResultType>(null);
+  const navigate = useNavigate();
 
   const getType = ({ A, B }: { A: number; B: number }) => (A > B ? 'A' : 'B');
   useEffect(() => {
@@ -37,7 +39,9 @@ function CatchuTestResult() {
     };
     for (let i = 1; i < 13; i += 1) {
       const answer = localStorage.getItem(i.toString());
-      if (!answer) return;
+      if (!answer) {
+        return navigate('/test');
+      }
       if (answer === 'A' || answer === 'B')
         점수[questionToType[i.toString()]][answer] += 1;
     }
@@ -55,7 +59,7 @@ function CatchuTestResult() {
         catchuText: reverseCatchu.catchuText,
       },
     });
-  }, []);
+  }, [navigate]);
   if (!result) return <div>로딩중</div>;
 
   return (
@@ -63,14 +67,16 @@ function CatchuTestResult() {
       <StCatchuText src={result.catchuText} alt={result.name} />
       <StShortDescriptionWrapper>
         {result.shortDescription.map((text) => (
-          <StShortDescription type={text.type}>
+          <StShortDescription type={text.type} key={text.content}>
             {text.content}
           </StShortDescription>
         ))}
       </StShortDescriptionWrapper>
       <StLongDescriptionWrapper>
         {result.longDescription.map((text) => (
-          <StLongDescription type={text.type}>{text.content}</StLongDescription>
+          <StLongDescription type={text.type} key={text.content}>
+            {text.content}
+          </StLongDescription>
         ))}
       </StLongDescriptionWrapper>
       <StShortDescriptionWrapper>
@@ -80,10 +86,10 @@ function CatchuTestResult() {
       <StLongDescriptionWrapper>
         <StCharacteristicListWrapper>
           {result.characteristics.map((text) => (
-            <>
+            <React.Fragment key={text}>
               <StDot />
               <StCharacteristicList>{text}</StCharacteristicList>
-            </>
+            </React.Fragment>
           ))}
         </StCharacteristicListWrapper>
       </StLongDescriptionWrapper>
