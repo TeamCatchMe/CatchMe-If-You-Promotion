@@ -224,7 +224,7 @@ export const answerToCatchu: AnswerToCatchuType = {
     ],
     longDescription: [
       {
-        content: '스트리트 우먼 or 맨 파이터를 꿈꾸고 있진 않나요? 매사',
+        content: '스트리트 우먼 or 맨 파이터를 꿈꾸고 있진 않나요? 매사 ',
         type: TextType.normal,
       },
       {
