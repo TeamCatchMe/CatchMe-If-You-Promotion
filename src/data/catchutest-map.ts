@@ -14,6 +14,22 @@ import BBAATxt from '../assets/results/bbaa-text.svg';
 import BBBATxt from '../assets/results/bbba-text.svg';
 import BBABTxt from '../assets/results/bbab-text.svg';
 import BBBBTxt from '../assets/results/bbbb-text.svg';
+import AAAACatchu from '../assets/results/aaaa-catchu.svg';
+import AAABCatchu from '../assets/results/aaab-catchu.svg';
+import AABACatchu from '../assets/results/aaba-catchu.svg';
+import AABBCatchu from '../assets/results/aabb-catchu.svg';
+import ABAACatchu from '../assets/results/abaa-catchu.svg';
+import ABBACatchu from '../assets/results/abba-catchu.svg';
+import ABABCatchu from '../assets/results/abab-catchu.svg';
+import ABBBCatchu from '../assets/results/abbb-catchu.svg';
+import BAAACatchu from '../assets/results/baaa-catchu.svg';
+import BAABCatchu from '../assets/results/baab-catchu.svg';
+import BABACatchu from '../assets/results/baba-catchu.svg';
+import BABBCatchu from '../assets/results/babb-catchu.svg';
+import BBAACatchu from '../assets/results/bbaa-catchu.svg';
+import BBBACatchu from '../assets/results/bbba-catchu.svg';
+import BBABCatchu from '../assets/results/bbab-catchu.svg';
+import BBBBCatchu from '../assets/results/bbbb-catchu.svg';
 
 export const questionToType: {
   [k: string]: '성실성' | '개방성' | '외향성' | '우호성';
@@ -60,6 +76,7 @@ enum CatchuDataKey {
 export type CatchuDataType = {
   name: string;
   catchuText: string;
+  catchuImage: string;
   reverse: CatchuDataKey;
   shortDescription: { content: string; type: TextType }[];
   longDescription: { content: string; type: TextType }[];
@@ -74,6 +91,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   AAAA: {
     name: '찰칵- 멋진 곳만 골라 출사 다니는 포토그래퍼',
     catchuText: AAAATxt,
+    catchuImage: AAAACatchu,
     reverse: CatchuDataKey.BBBB,
     shortDescription: [
       { content: '밝은 에너지', type: TextType.special },
@@ -112,6 +130,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   AAAB: {
     name: '크루들과 함께 도심 속 달리기, 시티 러너',
     catchuText: AAABTxt,
+    catchuImage: AAABCatchu,
     reverse: CatchuDataKey.BBBA,
     shortDescription: [
       { content: '운동 하나를 하더라도\n', type: TextType.normal },
@@ -147,6 +166,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   AABA: {
     name: '한 걸음 한 걸음, 나를 찾는 길을 걷는 트래킹족',
     catchuText: AABATxt,
+    catchuImage: AABACatchu,
     reverse: CatchuDataKey.BBAB,
     shortDescription: [
       { content: '재미있는 게 너무 많아', type: TextType.special },
@@ -186,6 +206,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   AABB: {
     name: '오르지 못한 절벽은 없어! 마운틴 클라이머',
     catchuText: AABBTxt,
+    catchuImage: AABBCatchu,
     reverse: CatchuDataKey.BBAA,
     shortDescription: [
       { content: '높이 솟은 암벽일지라도 ', type: TextType.normal },
@@ -217,6 +238,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   ABAA: {
     name: '내 안의 아이돌을 꺼내봐! 둠칫둠칫 댄서',
     catchuText: ABAATxt,
+    catchuImage: ABAACatchu,
     reverse: CatchuDataKey.BABB,
     shortDescription: [
       { content: '넘치는 열정과 에너지', type: TextType.special },
@@ -257,6 +279,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   ABAB: {
     name: '차곡차곡 도장깨기를 해볼까? 스트리트 푸드 파이터!',
     catchuText: ABABTxt,
+    catchuImage: ABABCatchu,
     reverse: CatchuDataKey.BABA,
     shortDescription: [
       { content: '꼼꼼히 후기를 체크하는', type: TextType.special },
@@ -297,6 +320,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   ABBA: {
     name: '혼자 봤던 풍경들이 고스란히 남기를, 여행 브이로거',
     catchuText: ABBATxt,
+    catchuImage: ABBACatchu,
     reverse: CatchuDataKey.BAAB,
     shortDescription: [
       { content: '자연 속에서', type: TextType.special },
@@ -335,6 +359,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   ABBB: {
     name: '무럭무럭 키워서 맛있게 먹어버리겠다! 텃밭 가꾸는 농부',
     catchuText: ABBBTxt,
+    catchuImage: ABBBCatchu,
     reverse: CatchuDataKey.BAAA,
     shortDescription: [
       { content: '특유의 세심함', type: TextType.special },
@@ -375,6 +400,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BAAA: {
     name: '빠른 두뇌회전으로 체스를 두는 퀸즈갬빗, 아니 캐츄갬빗?',
     catchuText: BAAATxt,
+    catchuImage: BAAACatchu,
     reverse: CatchuDataKey.ABBB,
     shortDescription: [
       { content: '충분한 고민', type: TextType.special },
@@ -415,6 +441,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BAAB: {
     name: '싸늘하다... 가슴에 비수가 날ㅇ...! 보드 게임을 지배하는 게이머',
     catchuText: BAABTxt,
+    catchuImage: BAABCatchu,
     reverse: CatchuDataKey.ABBA,
     shortDescription: [
       { content: '감정의 변화', type: TextType.special },
@@ -455,6 +482,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BABA: {
     name: '정성 한 그릇을 손 끝으로 빚어내는 도예가',
     catchuText: BABATxt,
+    catchuImage: BABACatchu,
     reverse: CatchuDataKey.ABAB,
     shortDescription: [
       { content: '특유의 정서와 단단한 마음', type: TextType.special },
@@ -486,6 +514,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BABB: {
     name: '맛있는 건 정말 참을 수 없어~ 집밥 캐선생',
     catchuText: BABBTxt,
+    catchuImage: BABBCatchu,
     reverse: CatchuDataKey.ABAA,
     shortDescription: [
       { content: '소소한 행복과 안정감', type: TextType.special },
@@ -517,6 +546,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BBAA: {
     name: '브레인스토밍과 썰전은 참을 수 없지, 독서 모임 우수 회원',
     catchuText: BBAATxt,
+    catchuImage: BBAACatchu,
     reverse: CatchuDataKey.AABB,
     shortDescription: [
       { content: '의견을 전개하는데', type: TextType.special },
@@ -555,6 +585,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BBAB: {
     name: '교양 충전, 환상의 하모니를 연주하는 오케스트라 단원',
     catchuText: BBABTxt,
+    catchuImage: BBABCatchu,
     reverse: CatchuDataKey.AABA,
     shortDescription: [
       { content: '아름다운 선율', type: TextType.special },
@@ -594,6 +625,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BBBA: {
     name: '나만의 세계를 써내려가는 작가, 조앤 캐츄 롤링?',
     catchuText: BBBATxt,
+    catchuImage: BBBACatchu,
     reverse: CatchuDataKey.AAAB,
     shortDescription: [
       { content: '누구보다 ', type: TextType.normal },
@@ -626,6 +658,7 @@ export const answerToCatchu: AnswerToCatchuType = {
   BBBB: {
     name: '한 땀마다 따숩게, 겨울을 기다리는 뜨개질 마스터',
     catchuText: BBBBTxt,
+    catchuImage: BBBBCatchu,
     reverse: CatchuDataKey.AAAA,
     shortDescription: [
       { content: '어른스럽고 침착한', type: TextType.special },

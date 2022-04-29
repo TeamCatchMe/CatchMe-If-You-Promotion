@@ -16,6 +16,7 @@ import { ReactComponent as ImgCatchu9 } from './catchues/img_catchu-9.svg';
 import { ReactComponent as ImgCatchu10 } from './catchues/img_catchu-10.svg';
 import { ReactComponent as ImgCatchu11 } from './catchues/img_catchu-11.svg';
 import { ReactComponent as ImgCatchu12 } from './catchues/img_catchu.svg';
+import { ReactComponent as ImgCatchuTestTitle } from './image-catchutest-title.svg';
 
 export {
   ImageLogo,
@@ -36,4 +37,5 @@ export {
   ImgCatchu10,
   ImgCatchu11,
   ImgCatchu12,
+  ImgCatchuTestTitle,
 };

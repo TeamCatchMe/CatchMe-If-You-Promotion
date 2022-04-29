@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { ImgCatchuTestTitle } from '../../../assets';
 import {
   questionToType,
   answerToCatchu,
@@ -7,6 +8,7 @@ import {
   TextType,
 } from '../../../data/catchutest-map';
 import {
+  StCatchuImage,
   StCatchuText,
   StCharacteristicList,
   StCharacteristicListWrapper,
@@ -22,6 +24,7 @@ type TestResultType = CatchuDataType & {
   reverseCatchu: {
     name: string;
     catchuText: string;
+    catchuImage: string;
   };
 };
 
@@ -57,6 +60,7 @@ function CatchuTestResult() {
       reverseCatchu: {
         name: reverseCatchu.name,
         catchuText: reverseCatchu.catchuText,
+        catchuImage: reverseCatchu.catchuImage,
       },
     });
   }, [navigate]);
@@ -64,7 +68,12 @@ function CatchuTestResult() {
 
   return (
     <StTextResultWrapper>
+      <ImgCatchuTestTitle style={{ alignSelf: 'center', marginBottom: 32 }} />
       <StCatchuText src={result.catchuText} alt={result.name} />
+      <div style={{ height: 33 }} />
+      <StCatchuImage src={result.catchuImage} alt={result.name} />
+      <div style={{ height: 28 }} />
+      <div style={{ height: 1, width: '100%', backgroundColor: '#2C2C2C' }} />
       <StShortDescriptionWrapper>
         {result.shortDescription.map((text) => (
           <StShortDescription type={text.type} key={text.content}>
@@ -100,10 +109,16 @@ function CatchuTestResult() {
         <StShortDescription type={TextType.special}>캐츄</StShortDescription>
       </StShortDescriptionWrapper>
       <StLongDescriptionWrapper center={true}>
+        <StCatchuImage
+          src={result.reverseCatchu.catchuImage}
+          alt={result.name}
+          reverse
+        />
+        <div style={{ height: 8 }} />
         <StCatchuText
           src={result.reverseCatchu.catchuText}
           alt={result.name}
-          reverse={true}
+          reverse
         />
       </StLongDescriptionWrapper>
       <StShortDescriptionWrapper>

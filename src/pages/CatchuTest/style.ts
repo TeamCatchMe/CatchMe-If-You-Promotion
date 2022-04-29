@@ -111,6 +111,12 @@ export const StCatchuText = styled.img<{ reverse?: boolean }>`
   ${({ reverse }) => reverse && `max-height: 34px;`}
 `;
 
+export const StCatchuImage = styled.img<{ reverse?: boolean }>`
+  max-height: 168px;
+  width: auto;
+  ${({ reverse }) => reverse && `max-height: 100px;`}
+`;
+
 export const StTextResultWrapper = styled.div`
   display: flex;
   flex-direction: column;
