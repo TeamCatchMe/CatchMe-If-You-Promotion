@@ -224,7 +224,8 @@ export const answerToCatchu: AnswerToCatchuType = {
     ],
     longDescription: [
       {
-        content: '스트리트 우먼 or 맨 파이터를 꿈꾸고 있진 않나요? 매사 ',
+        content:
+          '스트리트 우먼 or 맨 파이터를 꿈꾸고 있진 않나요? 매사 열정이 넘쳐서 ',
         type: TextType.normal,
       },
       {
@@ -258,8 +259,8 @@ export const answerToCatchu: AnswerToCatchuType = {
     catchuText: ABABTxt,
     reverse: CatchuDataKey.BABA,
     shortDescription: [
-      { content: '특유의 세심함', type: TextType.special },
-      { content: '이 뛰어난 당신', type: TextType.normal },
+      { content: '꼼꼼히 후기를 체크하는', type: TextType.special },
+      { content: ' 당신', type: TextType.normal },
     ],
     longDescription: [
       {
@@ -365,7 +366,7 @@ export const answerToCatchu: AnswerToCatchuType = {
       },
     ],
     characteristics: [
-      '높은 관찰력으로 남들이 지나치는 것도 발견해낼 수 있어요. 타고나 눈썰미로 주의 깊게 주변을 파악해요.',
+      '높은 관찰력으로 남들이 지나치는 것도 발견해낼 수 있어요. 타고난 눈썰미로 주의 깊게 주변을 파악해요.',
       '흥미를 느낀 것에는 누구보다 집중해서 몰입해요. 현실적인 선택과 집중에 강한 편이에요.',
       '남들과 비교를 많이 하진 않지만 지고는 못 살아요.',
       '다른 사람들과 소통하는 것을 즐기며 의견을 말하는 데에 소질이 있어요.',
@@ -416,7 +417,8 @@ export const answerToCatchu: AnswerToCatchuType = {
     catchuText: BAABTxt,
     reverse: CatchuDataKey.ABBA,
     shortDescription: [
-      { content: '손은 눈보다 빠르니까!', type: TextType.special },
+      { content: '감정의 변화', type: TextType.special },
+      { content: '가 크지 않은 당신', type: TextType.normal },
     ],
     longDescription: [
       {
@@ -594,7 +596,7 @@ export const answerToCatchu: AnswerToCatchuType = {
     catchuText: BBBATxt,
     reverse: CatchuDataKey.AAAB,
     shortDescription: [
-      { content: '조용하지만 ', type: TextType.normal },
+      { content: '누구보다 ', type: TextType.normal },
       { content: '창의적인', type: TextType.special },
       { content: ' 당신', type: TextType.normal },
     ],
@@ -632,7 +634,7 @@ export const answerToCatchu: AnswerToCatchuType = {
     longDescription: [
       {
         content:
-          '왠지 모를 포근함이 느껴져요. 혼자만의 공간에 대한 애정이 크고, ',
+          '어른스럽고 침착한 당신에게서는 왠지 모를 포근함이 느껴져요. 혼자만의 공간에 대한 애정이 크고, ',
         type: TextType.normal,
       },
       {
