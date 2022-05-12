@@ -103,7 +103,7 @@ function CatchuTestResult() {
 
   const shareCatchuCard = () => {
     if (resultURL === null) return;
-    window.navigator.share({ url: RESULT_IMAGE_SOURCE + resultURL });
+    navigator.clipboard.writeText(`${window.location.origin}/test`);
   };
 
   return (
