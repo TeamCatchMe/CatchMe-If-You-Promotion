@@ -54,7 +54,7 @@ export enum TextType {
   ultra = 'ultra',
 }
 
-enum CatchuDataKey {
+export enum CatchuDataKey {
   AAAA = 'AAAA',
   AAAB = 'AAAB',
   AABA = 'AABA',

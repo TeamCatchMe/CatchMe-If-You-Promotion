@@ -3,6 +3,9 @@ import { ReactComponent as ImageMain } from './image-main.svg';
 import { ReactComponent as ImageCatchutestStart } from './image-catchutest-start.svg';
 import { ReactComponent as ImageCatchutestMain } from './image-catchutest-main.svg';
 import { ReactComponent as ButtonCatchutestStart } from './button-catchutest-start.svg';
+import { ReactComponent as ButtonDownload } from './button-download.svg';
+import { ReactComponent as ButtonLink } from './button-link.svg';
+import { ReactComponent as ButtonRetry } from './button-rotate-left.svg';
 import { ReactComponent as IcBtnBack } from './ic_btn_back.svg';
 import { ReactComponent as ImgCatchu1 } from './catchues/img_catchu-1.svg';
 import { ReactComponent as ImgCatchu2 } from './catchues/img_catchu-2.svg';
@@ -24,6 +27,9 @@ export {
   ImageCatchutestStart,
   ImageCatchutestMain,
   ButtonCatchutestStart,
+  ButtonDownload,
+  ButtonLink,
+  ButtonRetry,
   IcBtnBack,
   ImgCatchu1,
   ImgCatchu2,

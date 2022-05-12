@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { ImgCatchuTestTitle } from '../../../assets';
+import {
+  ImgCatchuTestTitle,
+  ButtonLink,
+  ButtonDownload,
+  ButtonRetry,
+} from '../../../assets';
+import AppDownloadButton from '../../../components/AppDownloadButton';
 import {
   questionToType,
   answerToCatchu,
   CatchuDataType,
   TextType,
 } from '../../../data/catchutest-map';
+import { RESULT_IMAGE_SOURCE } from '../../../data/misc';
 import {
   StCatchuImage,
   StCatchuText,
@@ -15,10 +22,14 @@ import {
   StDot,
   StLongDescription,
   StLongDescriptionWrapper,
+  StRetryButtonWrapper,
+  StShareButtonWrapper,
+  StShareWrapper,
   StShortDescription,
   StShortDescriptionWrapper,
   StTextResultWrapper,
 } from '../style';
+import { saveAs } from 'file-saver';
 
 type TestResultType = CatchuDataType & {
   reverseCatchu: {
@@ -30,6 +41,7 @@ type TestResultType = CatchuDataType & {
 
 function CatchuTestResult() {
   const [result, setResult] = useState<null | TestResultType>(null);
+  const [resultURL, setResultURL] = useState<null | string>(null);
   const navigate = useNavigate();
 
   const getType = ({ A, B }: { A: number; B: number }) => (A > B ? 'A' : 'B');
@@ -63,8 +75,36 @@ function CatchuTestResult() {
         catchuImage: reverseCatchu.catchuImage,
       },
     });
+    setResultURL(
+      `${getType(점수.외향성)}${getType(점수.성실성)}${getType(
+        점수.우호성
+      )}${getType(점수.개방성)}.png`.toLowerCase()
+    );
   }, [navigate]);
   if (!result) return <div>로딩중</div>;
+
+  const resetText = () => {
+    localStorage.clear();
+    navigate('/test');
+  };
+
+  const getCatchuCardBlob = async () => {
+    if (resultURL === null) return undefined;
+    const imageResponse = await fetch(RESULT_IMAGE_SOURCE + resultURL);
+    const imageBlob = await imageResponse.blob();
+    return imageBlob;
+  };
+
+  const saveCatchuCard = async () => {
+    const catchuCardBlob = await getCatchuCardBlob();
+    if (!catchuCardBlob) return;
+    saveAs(catchuCardBlob, 'my-lovely-catchu.png');
+  };
+
+  const shareCatchuCard = () => {
+    if (resultURL === null) return;
+    window.navigator.share({ url: RESULT_IMAGE_SOURCE + resultURL });
+  };
 
   return (
     <StTextResultWrapper>
@@ -137,6 +177,28 @@ function CatchuTestResult() {
           구경하며, 각자의 개성을 발견하고 몰입하길 기대하고 있어요.
         </StLongDescription>
       </StLongDescriptionWrapper>
+      <div style={{ height: 35 }} />
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <AppDownloadButton />
+      </div>
+      <div style={{ height: 40 }} />
+      <div style={{ height: 1, width: '100%', backgroundColor: '#2C2C2C' }} />
+      <div style={{ height: 48 }} />
+      <StShareWrapper>
+        <div>내 결과 공유하기</div>
+        <StShareButtonWrapper>
+          <div onClick={shareCatchuCard}>
+            <ButtonLink />
+          </div>
+          <div onClick={saveCatchuCard}>
+            <ButtonDownload />
+          </div>
+        </StShareButtonWrapper>
+        <StRetryButtonWrapper onClick={resetText}>
+          <ButtonRetry />
+          <div>테스트 다시하기</div>
+        </StRetryButtonWrapper>
+      </StShareWrapper>
     </StTextResultWrapper>
   );
 }

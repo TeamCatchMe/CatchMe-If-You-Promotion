@@ -144,3 +144,37 @@ export const StDot = styled.div`
   border-radius: 3px;
   margin-top: 9px;
 `;
+
+export const StShareWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const StShareButtonWrapper = styled.div`
+  display: flex;
+  gap: 15px;
+  margin-top: 19px;
+  & > div {
+    background-color: rgba(196, 196, 196, 1);
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+`;
+
+export const StRetryButtonWrapper = styled.div`
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 30px;
+  & > div {
+    border-bottom: 1px solid white;
+    font-size: 17px;
+    cursor: pointer;
+  }
+`;
