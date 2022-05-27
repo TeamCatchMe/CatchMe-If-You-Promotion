@@ -3,6 +3,8 @@ import { COMMON_STYLES } from '../../styles/common';
 
 export const StDownloadButton = styled.button`
   ${COMMON_STYLES.BUTTON_PINK}
+  font-family: 'BMJUA';
+  font-size: 24px;
 `;
 
 export const StPlatformButton = styled.div`

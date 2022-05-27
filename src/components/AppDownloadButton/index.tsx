@@ -10,7 +10,7 @@ function AppDownloadButton() {
         <StDownloadButton
           onClick={() => openStore(isAndroid ? 'android' : 'iOS')}
         >
-          캐치미 앱 다운로드
+          캐치미 다운로드
         </StDownloadButton>
       ) : (
         <StPlatformWrapper>

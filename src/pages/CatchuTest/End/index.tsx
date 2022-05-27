@@ -30,6 +30,7 @@ import {
   StTextResultWrapper,
 } from '../style';
 import { saveAs } from 'file-saver';
+import { COLORS } from '../../../styles/color';
 
 type TestResultType = CatchuDataType & {
   reverseCatchu: {
@@ -42,6 +43,7 @@ type TestResultType = CatchuDataType & {
 function CatchuTestResult() {
   const [result, setResult] = useState<null | TestResultType>(null);
   const [resultURL, setResultURL] = useState<null | string>(null);
+  const [showCopyConfirmToast, setShowCopyConfirmToast] = useState(false);
   const navigate = useNavigate();
 
   const getType = ({ A, B }: { A: number; B: number }) => (A > B ? 'A' : 'B');
@@ -104,6 +106,10 @@ function CatchuTestResult() {
   const shareCatchuCard = () => {
     if (resultURL === null) return;
     navigator.clipboard.writeText(`${window.location.origin}/test`);
+    setShowCopyConfirmToast(true);
+    setTimeout(() => {
+      setShowCopyConfirmToast(false);
+    }, 1200);
   };
 
   return (
@@ -181,11 +187,41 @@ function CatchuTestResult() {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <AppDownloadButton />
       </div>
-      <div style={{ height: 40 }} />
-      <div style={{ height: 1, width: '100%', backgroundColor: '#2C2C2C' }} />
-      <div style={{ height: 48 }} />
+      <div style={{ position: 'relative' }}>
+        <div style={{ height: 40 }} />
+        <div style={{ height: 1, width: '100%', backgroundColor: '#2C2C2C' }} />
+        <div style={{ height: 48 }} />
+        {showCopyConfirmToast && (
+          <div
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: 20,
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <div
+              style={{
+                height: 40,
+                width: 220,
+                textAlign: 'center',
+                fontSize: 15,
+                lineHeight: '40px',
+                fontWeight: 600,
+                backgroundColor: 'rgba(196,196,196,1)',
+                color: COLORS.BLACK_200,
+                borderRadius: 12,
+              }}
+            >
+              테스트 링크가 복사되었습니다
+            </div>
+          </div>
+        )}
+      </div>
       <StShareWrapper>
-        <div>내 결과 공유하기</div>
+        <div>내 캐츄를 SNS에 자랑해보세요!</div>
         <StShareButtonWrapper>
           <div onClick={shareCatchuCard}>
             <ButtonLink />
