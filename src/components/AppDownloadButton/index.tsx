@@ -1,17 +1,17 @@
 import React from 'react';
 import { isAndroid, isIOS } from 'react-device-detect';
 import { openStore } from '../../utils/openStore';
-import { StDownloadButton, StPlatformButton, StPlatformWrapper } from './style';
+import GlitterButton from '../GlitterButton';
+import { StPlatformButton, StPlatformWrapper } from './style';
 
 function AppDownloadButton() {
   return (
     <>
       {isAndroid || isIOS ? (
-        <StDownloadButton
+        <GlitterButton
+          text='캐치미 다운로드'
           onClick={() => openStore(isAndroid ? 'android' : 'iOS')}
-        >
-          캐치미 다운로드
-        </StDownloadButton>
+        />
       ) : (
         <StPlatformWrapper>
           <StPlatformButton onClick={() => openStore('iOS')}>
