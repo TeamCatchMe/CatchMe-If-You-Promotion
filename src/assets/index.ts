@@ -20,6 +20,9 @@ import { ReactComponent as ImgCatchu10 } from './catchues/img_catchu-10.svg';
 import { ReactComponent as ImgCatchu11 } from './catchues/img_catchu-11.svg';
 import { ReactComponent as ImgCatchu12 } from './catchues/img_catchu.svg';
 import { ReactComponent as ImgCatchuTestTitle } from './image-catchutest-title.svg';
+import { ReactComponent as BgChatBubbleShining } from './bg-chatbubble-shining.svg';
+import { ReactComponent as BgButtonGlitterPink } from './bg-button-glitter-pink.svg';
+import { ReactComponent as IcArrowNextSection } from './ic-arrow-next-section.svg';
 
 export {
   ImageLogo,
@@ -44,4 +47,7 @@ export {
   ImgCatchu11,
   ImgCatchu12,
   ImgCatchuTestTitle,
+  BgChatBubbleShining,
+  BgButtonGlitterPink,
+  IcArrowNextSection,
 };

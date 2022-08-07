@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import AboutPage from '../About';
+import AboutFeaturePage from '../About/Feature';
 import CatchurisPage from '../Catchuris';
 import CatchuTestPage from '../CatchuTest';
 import CatchuTestResult from '../CatchuTest/End';
@@ -13,6 +14,7 @@ function Router() {
     <Routes>
       <Route path='/' element={<MainPage />} />
       <Route path='/about' element={<AboutPage />} />
+      <Route path='/about/feature' element={<AboutFeaturePage />} />
       <Route path='/test' element={<CatchuTestPage />} />
       <Route path='/test/result' element={<CatchuTestResult />} />
       <Route path='/test/:questionID' element={<CatchuTestStart />} />

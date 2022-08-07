@@ -5,7 +5,17 @@ export const GlobalStyle = createGlobalStyle`
     ${reset};
     @font-face {
         font-family: "BMJUA";
-        src: url("/font/BMJUA_otf.otf");
+        src: url("/static/font/BMJUA_otf.otf");
+    }
+    @font-face {
+        font-family: "Cafe24Ohsquareair";
+        src: url("/static/font/Cafe24Ohsquareair.ttf");
+    }
+    @font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
     }
     body {
         min-height: 100vh;
@@ -38,7 +48,6 @@ export const GlobalStyle = createGlobalStyle`
         overflow: visible;
         background: transparent;
         color: inherit;
-        font: inherit;
         line-height: normal;
         -webkit-font-smoothing: inherit;
         -moz-osx-font-smoothing: inherit;
