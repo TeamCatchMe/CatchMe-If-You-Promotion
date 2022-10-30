@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StAboutSection = styled.section`
+export const StAboutSection = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,4 +25,23 @@ export const StAboutDescription = styled.div`
   white-space: pre-wrap;
   text-align: center;
   color: rgba(239, 239, 239, 1);
+`;
+
+export const StBtnDownWrapper = styled.div`
+  position: fixed;
+  bottom: 26px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+`;
+
+export const StAboutWrapper = styled.div`
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
 `;

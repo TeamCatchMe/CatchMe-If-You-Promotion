@@ -1,23 +1,21 @@
-import React from 'react';
-import ChatbubbleShining from '../../../../components/Chatbubble/Shining';
 import { StAboutDescription, StAboutSection, StAboutTitle } from '../../style';
 
-function AboutRecordSection() {
-  return (
-    <StAboutSection>
-      <ChatbubbleShining text='활동기록' />
-      <div style={{ height: 13 }} />
-      <StAboutTitle>
-        내 속의 여러 부캐들을{'\n'}캐릭터로 표현하고, 기록해요!
-      </StAboutTitle>
-      <div style={{ height: 45 }} />
-      <StAboutDescription>
-        캐릭터 이미지, 이름 등을 설정해 해당 캐릭터에 대한{'\n'}기록을 남길 수
-        있습니다. 활동한 날짜, 내용,{'\n'}사진 첨부로 보다 생생한 기록이
-        가능합니다.
-      </StAboutDescription>
-    </StAboutSection>
-  );
-}
+const AboutRecordSection = () => (
+  <StAboutSection>
+    <StAboutTitle>활동을 기록해요!</StAboutTitle>
+    <div style={{ height: 26 }} />
+    <img
+      src='/static/images/img-about-activity.png'
+      alt='calendar'
+      height={243}
+    />
+    <div style={{ height: 24 }} />
+    <StAboutDescription>
+      나의 여러 모습을 담은 부캐들을 캐릭터로 표현하고, {'\n'}각 부캐 활동을
+      기록할 수 있어요. 귀여운 캐츄의 이미지와 {'\n'}이름을 설정해 나만의
+      캐릭터를 만들고, 활동한 날짜, 내용, {'\n'}사진을 기록해 생생하게 기억해요.
+    </StAboutDescription>
+  </StAboutSection>
+);
 
 export default AboutRecordSection;
