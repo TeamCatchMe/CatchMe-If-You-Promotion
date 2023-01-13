@@ -26,7 +26,6 @@ function AboutFeaturePage() {
   }, [page, navigate]);
 
   const onWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    console.log(e.deltaY);
     if (e.deltaY > 1) {
       setPage((prev) => Math.min(prev + 1, PAGE_LENGTH - 1));
     } else if (e.deltaY < -1) {
@@ -39,8 +38,33 @@ function AboutFeaturePage() {
     []
   );
 
+  const lastTouchYRef = useRef<number | undefined>(undefined);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    lastTouchYRef.current = e.touches[0]?.clientY;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (lastTouchYRef.current) {
+      const touchEnd = e.changedTouches[0]?.clientY;
+      if (touchEnd) {
+        const touchDelta = lastTouchYRef.current - touchEnd;
+        if (touchDelta > 1) {
+          setPage((prev) => Math.min(prev + 1, PAGE_LENGTH - 1));
+        } else if (touchDelta < -1) {
+          setPage((prev) => Math.max(prev - 1, -1));
+        }
+        lastTouchYRef.current = undefined;
+      }
+    }
+  };
+
   return (
-    <StAboutWrapper onWheel={throttleWheel} ref={wrapperRef}>
+    <StAboutWrapper
+      onWheel={throttleWheel}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      ref={wrapperRef}
+    >
       <AboutRecordSection />
       <AboutCalendarSection />
       <AboutCommunitySection />
