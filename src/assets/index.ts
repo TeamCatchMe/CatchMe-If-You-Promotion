@@ -17,11 +17,13 @@ import { ReactComponent as ImgCatchu8 } from './catchues/img_catchu-8.svg';
 import { ReactComponent as ImgCatchu9 } from './catchues/img_catchu-9.svg';
 import { ReactComponent as ImgCatchu12 } from './catchues/img_catchu.svg';
 import { ReactComponent as IcArrowNextSection } from './ic-arrow-next-section.svg';
+import { ReactComponent as IcHome } from './ic-home.svg';
 import { ReactComponent as IcBtnBack } from './ic_btn_back.svg';
 import { ReactComponent as IcBtnDown } from './ic_btn_down.svg';
 import { ReactComponent as ImageCatchutestMain } from './image-catchutest-main.svg';
 import { ReactComponent as ImageCatchutestStart } from './image-catchutest-start.svg';
 import { ReactComponent as ImgCatchuTestTitle } from './image-catchutest-title.svg';
+import imageGameWorld from './image-game-world.png';
 import { ReactComponent as ImageLogo } from './image-logo.svg';
 import { ReactComponent as ImageMain } from './image-main.svg';
 
@@ -52,4 +54,6 @@ export {
   BgChatBubbleShining,
   BgButtonGlitterPink,
   IcArrowNextSection,
+  IcHome,
+  imageGameWorld,
 };

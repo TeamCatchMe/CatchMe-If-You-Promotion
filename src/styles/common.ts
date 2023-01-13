@@ -14,6 +14,20 @@ export const COMMON_STYLES = {
     text-align: center;
     font-size: 16px;
     padding: 17px 0;
+    line-height: 20px;
+  `,
+  BUTTON_GRAY_ROUNDED_BORDERED: css`
+    background-color: ${COLORS.BLACK_200};
+    border: 1px solid ${COLORS.GRAY_300};
+    border-radius: 25px;
+    display: flex;
+    gap: 6px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 50px;
   `,
   BUTTON_PINK: css`
     background-color: ${COLORS.PINK_100};

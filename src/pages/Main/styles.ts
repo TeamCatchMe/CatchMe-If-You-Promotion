@@ -8,6 +8,12 @@ export const StMainWrapper = styled.div`
   padding-top: 64px;
 `;
 
+export const StGameWorldWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const StMainLink = styled(Link)`
   ${COMMON_STYLES.BUTTON_GRAY};
   width: calc(100% - 40px);
@@ -27,6 +33,14 @@ export const StMainText = styled.div`
   margin-bottom: 33px;
 `;
 
+export const StGameWorldMainText = styled.div`
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-top: -30px;
+  margin-left: 20px;
+`;
+
 export const StStrongText = styled.strong`
   font-weight: 700;
 `;
@@ -39,4 +53,17 @@ export const StLinkWrapper = styled.div`
   margin-top: 49px;
   margin-bottom: 45px;
   gap: 20px;
+`;
+
+export const StImgGameWorld = styled.div`
+  width: 100%;
+  height: 375px;
+  background-size: 518px 481px;
+  background-position: center -84px;
+`;
+
+export const StHomeLink = styled(Link)`
+  ${COMMON_STYLES.BUTTON_GRAY_ROUNDED_BORDERED};
+  align-self: center;
+  width: fit-content;
 `;
