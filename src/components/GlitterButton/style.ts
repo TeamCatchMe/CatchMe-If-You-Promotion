@@ -4,8 +4,12 @@ import { COLORS } from '../../styles/color';
 export const StGlitterButton = styled.button`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  padding: 18px 45px;
+  padding: 16px 0;
+  width: 220px;
+  text-align: center;
   background-color: ${COLORS.PINK_200};
   border-radius: 30px;
   border: 2px solid ${COLORS.PINK_100};

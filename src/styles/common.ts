@@ -23,11 +23,11 @@ export const COMMON_STYLES = {
     display: flex;
     gap: 6px;
     height: 50px;
+    width: 220px;
     justify-content: center;
     align-items: center;
     font-size: 14px;
     font-weight: 500;
-    padding: 0 50px;
   `,
   BUTTON_PINK: css`
     background-color: ${COLORS.PINK_100};

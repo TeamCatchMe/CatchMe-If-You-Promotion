@@ -1,19 +1,22 @@
+import { saveAs } from 'file-saver';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import {
-  ImgCatchuTestTitle,
-  ButtonLink,
   ButtonDownload,
+  ButtonLink,
   ButtonRetry,
+  ImgCatchuTestTitle,
 } from '../../../assets';
 import AppDownloadButton from '../../../components/AppDownloadButton';
+import HomeLinkButton from '../../../components/HomeLinkButton';
 import {
-  questionToType,
   answerToCatchu,
   CatchuDataType,
+  questionToType,
   TextType,
 } from '../../../data/catchutest-map';
 import { RESULT_IMAGE_SOURCE } from '../../../data/misc';
+import { COLORS } from '../../../styles/color';
 import {
   StCatchuImage,
   StCatchuText,
@@ -29,8 +32,6 @@ import {
   StShortDescriptionWrapper,
   StTextResultWrapper,
 } from '../style';
-import { saveAs } from 'file-saver';
-import { COLORS } from '../../../styles/color';
 
 type TestResultType = CatchuDataType & {
   reverseCatchu: {
@@ -184,9 +185,21 @@ function CatchuTestResult() {
         </StLongDescription>
       </StLongDescriptionWrapper>
       <div style={{ height: 35 }} />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <AppDownloadButton />
-      </div>
+      <StShareWrapper>
+        <div>내 결과 공유하기</div>
+        <StShareButtonWrapper>
+          <div onClick={shareCatchuCard}>
+            <ButtonLink />
+          </div>
+          <div onClick={saveCatchuCard}>
+            <ButtonDownload />
+          </div>
+        </StShareButtonWrapper>
+        <StRetryButtonWrapper onClick={resetText}>
+          <ButtonRetry />
+          <div>테스트 다시하기</div>
+        </StRetryButtonWrapper>
+      </StShareWrapper>
       <div style={{ position: 'relative' }}>
         <div style={{ height: 40 }} />
         <div style={{ height: 1, width: '100%', backgroundColor: '#2C2C2C' }} />
@@ -220,21 +233,18 @@ function CatchuTestResult() {
           </div>
         )}
       </div>
-      <StShareWrapper>
-        <div>내 캐츄를 SNS에 자랑해보세요!</div>
-        <StShareButtonWrapper>
-          <div onClick={shareCatchuCard}>
-            <ButtonLink />
-          </div>
-          <div onClick={saveCatchuCard}>
-            <ButtonDownload />
-          </div>
-        </StShareButtonWrapper>
-        <StRetryButtonWrapper onClick={resetText}>
-          <ButtonRetry />
-          <div>테스트 다시하기</div>
-        </StRetryButtonWrapper>
-      </StShareWrapper>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          gap: 20,
+        }}
+      >
+        <AppDownloadButton />
+        <HomeLinkButton />
+      </div>
     </StTextResultWrapper>
   );
 }

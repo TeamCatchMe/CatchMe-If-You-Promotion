@@ -1,9 +1,9 @@
-import { IcHome, imageGameWorld } from '../../assets';
+import { imageGameWorld } from '../../assets';
+import HomeLinkButton from '../../components/HomeLinkButton';
 import { COLORS } from '../../styles/color';
 import {
   StGameWorldMainText,
   StGameWorldWrapper,
-  StHomeLink,
   StImgGameWorld,
   StLinkWrapper,
   StMainAnchor,
@@ -26,10 +26,7 @@ function GameWorldPage() {
           캐츄리스
         </StMainAnchor>
       </StLinkWrapper>
-      <StHomeLink to='/'>
-        <IcHome />
-        <div>메인으로</div>
-      </StHomeLink>
+      <HomeLinkButton />
     </StGameWorldWrapper>
   );
 }

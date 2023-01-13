@@ -1,5 +1,6 @@
 import AppDownloadButton from '../../../../components/AppDownloadButton';
 import ChatbubbleShining from '../../../../components/Chatbubble/Shining';
+import HomeLinkButton from '../../../../components/HomeLinkButton';
 import { StAboutDescription, StAboutSection, StAboutTitle } from '../../style';
 
 const AboutSectionEnd = () => (
@@ -15,7 +16,18 @@ const AboutSectionEnd = () => (
       채워나가고 싶다면,{'\n'}함께 CatchMe해요!
     </StAboutDescription>
     <div style={{ height: 68 }} />
-    <AppDownloadButton />
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        gap: 20,
+      }}
+    >
+      <AppDownloadButton />
+      <HomeLinkButton />
+    </div>
   </StAboutSection>
 );
 

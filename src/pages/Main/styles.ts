@@ -61,9 +61,3 @@ export const StImgGameWorld = styled.div`
   background-size: 518px 481px;
   background-position: center -84px;
 `;
-
-export const StHomeLink = styled(Link)`
-  ${COMMON_STYLES.BUTTON_GRAY_ROUNDED_BORDERED};
-  align-self: center;
-  width: fit-content;
-`;
