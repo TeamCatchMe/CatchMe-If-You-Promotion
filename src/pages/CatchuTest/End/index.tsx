@@ -101,7 +101,17 @@ function CatchuTestResult() {
   const saveCatchuCard = async () => {
     const catchuCardBlob = await getCatchuCardBlob();
     if (!catchuCardBlob) return;
-    saveAs(catchuCardBlob, 'my-lovely-catchu.png');
+    const catchuCardFile = new File([catchuCardBlob], 'my-lovely-catchu.png', {
+      type: 'image/jpeg',
+    });
+    if (navigator.canShare && navigator.canShare({ files: [catchuCardFile] })) {
+      navigator.share({
+        files: [catchuCardFile],
+        title: '캐츄 카드 저장',
+      });
+    } else {
+      saveAs(catchuCardBlob, 'my-lovely-catchu.png');
+    }
   };
 
   const shareCatchuCard = () => {
