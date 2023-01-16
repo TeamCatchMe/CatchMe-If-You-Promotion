@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { resetCss } from './reset';
 
 export const GlobalStyle = createGlobalStyle`
-    ${reset};
+    ${resetCss};
     @font-face {
         font-family: "BMJUA";
         src: url("/static/font/BMJUA_otf.otf");
@@ -12,10 +12,8 @@ export const GlobalStyle = createGlobalStyle`
         src: url("/static/font/Cafe24Ohsquareair.ttf");
     }
     @font-face {
-    font-family: 'Spoqa Han Sans Neo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+        font-family: "Spoqa Han Sans Neo";
+        src: url("/static/font/SpoqaHanSansNeo-Regular.otf");
     }
     body {
         min-height: 100vh;
@@ -28,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     * {
         color: white;
-        font-family: 'Spoqa Han Sans Neo'
+        font-family: 'Spoqa Han Sans Neo';
     }
     #root{
         max-width: 400px;
