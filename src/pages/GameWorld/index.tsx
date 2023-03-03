@@ -21,7 +21,7 @@ function GameWorldPage() {
       />
       <StGameWorldMainText>캐치미 게임 월드</StGameWorldMainText>
       <StLinkWrapper>
-        <StMainLink to='/test'>부캐 테스트</StMainLink>
+        <StMainLink to='/test'>부캐 찾기 테스트</StMainLink>
         <StMainAnchor href='https://catchme-catchuris.netlify.app/'>
           캐츄리스
         </StMainAnchor>
