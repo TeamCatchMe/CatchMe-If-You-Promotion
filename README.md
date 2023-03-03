@@ -1,10 +1,14 @@
-## !!작업중!!
-
 ### 배포
 
 https://catchme-promotion.netlify.app/ 들어가보셔 ㅋ
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9a814221-3962-4dcd-a034-66943d088c67/deploy-status)](https://app.netlify.com/sites/catchme-promotion/deploys)
+
+### 캐츄리스 레포
+
+https://github.com/SeojinSeojin/catchuris
+
+합칠 수 있다면 얼마나 좋을까?
 
 ### 작업 툴
 
